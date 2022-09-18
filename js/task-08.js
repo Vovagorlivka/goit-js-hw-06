@@ -7,11 +7,11 @@ function checkSubmit(event) {
     elements: { email, password },
   } = event.currentTarget;
 
-  if (email.value === "" || password.value === "") {
+  if (email.value === email.value.trim() || password.value === password.trim()) {
     return alert("Please fill in all fields");
   }
 
-  const result = { email: email.value, password: password.value };
+  const result = { email: email.value.trim(), password: password.value.trim() };
   console.log(result);
   event.currentTarget.reset();
 }
